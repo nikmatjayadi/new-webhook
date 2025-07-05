@@ -23,6 +23,10 @@ ROOM_MAP = json.loads(os.getenv("PROJECT_TO_ROOM_JSON", "{}"))
 # Folders that require Customer field
 FOLDERS_WITH_CUSTOMER_NAME = set(os.getenv("FOLDERS_WITH_CUSTOMER_NAME", "").split(","))
 
+@app.get("/")
+def root():
+    return {"status": "Webhook server is running"}
+
 @app.post("/wrike-webhook")
 async def wrike_webhook(request: Request):
     # Wrike verification challenge
