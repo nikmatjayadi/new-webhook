@@ -112,8 +112,6 @@ async def build_message(
     permalink = task.get("permalink", f"https://www.wrike.com/open.htm?id={task['id']}")
 
     message = f"""📌 **{task_type}** - {event_type}
-• 📁 Project: {project_desc}
-• 💬 Room: {room_desc}
 • 📝 Name: {title}
 • 🔄 Status: {status}
 • 🔺 Priority: {priority}
